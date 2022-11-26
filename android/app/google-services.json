@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "503671980018",
+    "firebase_url": "https://karzoun-chat-51d3d-default-rtdb.firebaseio.com",
+    "project_id": "karzoun-chat-51d3d",
+    "storage_bucket": "karzoun-chat-51d3d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:503671980018:android:fe9f429d8ffc95cc2fb56b",
+        "android_client_info": {
+          "package_name": "com.karzoun.karzounchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "503671980018-8u8etogpv0j3tc1nto20jnrfqdm7km67.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.karzoun.karzounchat",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "503671980018-a0h4qlhiupks1tn1immuoeepln8vvehr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAWKAxkm0xlCBTU1c6cs0vGgs884odRh4g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "503671980018-a0h4qlhiupks1tn1immuoeepln8vvehr.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "503671980018-85k0mmibc2n3h3l7nv0md486agjkv63o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.karzoun.karzounchat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
