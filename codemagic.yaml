@@ -6,7 +6,7 @@ workflows:
     environment:
       groups:
         - google_play
-      node: latest
+      node: 14.17.3 
       vars:
         PACKAGE_NAME: "com.karzoun.karzounchat"
     scripts:
