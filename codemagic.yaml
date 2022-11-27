@@ -23,7 +23,6 @@ workflows:
         script: yarn add yarn
       - name: Install npm dependencies
         script: | 
-          chmod -R 0777 / tmp
           sudo yarn install
           yarn start --reset-cache
       - name: Install Expo CLI
