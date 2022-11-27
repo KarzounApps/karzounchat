@@ -50,57 +50,57 @@ workflows:
       #   submit_as_draft: true
 
 
-  react-native-ios:
-    name: React Native iOS
-    max_build_duration: 120
-    instance_type: mac_mini_m1
-    environment:
-      ios_signing:
-        distribution_type: app_store
-        bundle_identifier: io.codemagic.sample.reactnative
-      vars:
-        BUNDLE_ID: "com.karzoun.karzounchat"
-        XCODE_WORKSPACE: "ios/App/App.xcworkspace" # <-- Put the name of your Xcode workspace here
-        XCODE_SCHEME: "App" # <-- Put the name of your Xcode scheme here
-        APP_ID: 1635427364
-    scripts:
-      - name: Install Expo CLI and eject
-        script: | 
-          yarn install
-          yarn global add expo-cli
-          expo eject
-      - name: Set Info.plist values
-        script: | 
-          PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
-          PLIST_BUDDY=/usr/libexec/PlistBuddy
-          $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" $PLIST
-      - name: Install CocoaPods dependencies
-        script: | 
-          cd ios && pod install
-      - name: Set up provisioning profiles settings on Xcode project
-        script: xcode-project use-profiles
-      - name: Increment build number
-        script: | 
-          cd $CM_BUILD_DIR/ios
-          LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
-          agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
-      - name: Build ipa for distribution
-        script: | 
-          xcode-project build-ipa \
-            --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
-            --scheme "$XCODE_SCHEME"
-    artifacts:
-      - build/ios/ipa/*.ipa
-      - /tmp/xcodebuild_logs/*.log
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
-      - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
-    publishing:
-      email:
-        recipients:
-          - mkarzoun@karzoun.com
-        notify:
-          success: true
-          failure: false
-      app_store_connect:
-        auth: integration
-        submit_to_app_store: false
+  # react-native-ios:
+  #   name: React Native iOS
+  #   max_build_duration: 120
+  #   instance_type: mac_mini_m1
+  #   environment:
+  #     ios_signing:
+  #       distribution_type: app_store
+  #       bundle_identifier: io.codemagic.sample.reactnative
+  #     vars:
+  #       BUNDLE_ID: "com.karzoun.karzounchat"
+  #       XCODE_WORKSPACE: "ios/App/App.xcworkspace" # <-- Put the name of your Xcode workspace here
+  #       XCODE_SCHEME: "App" # <-- Put the name of your Xcode scheme here
+  #       APP_ID: 1635427364
+  #   scripts:
+  #     - name: Install Expo CLI and eject
+  #       script: | 
+  #         yarn install
+  #         yarn global add expo-cli
+  #         expo eject
+  #     - name: Set Info.plist values
+  #       script: | 
+  #         PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
+  #         PLIST_BUDDY=/usr/libexec/PlistBuddy
+  #         $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" $PLIST
+  #     - name: Install CocoaPods dependencies
+  #       script: | 
+  #         cd ios && pod install
+  #     - name: Set up provisioning profiles settings on Xcode project
+  #       script: xcode-project use-profiles
+  #     - name: Increment build number
+  #       script: | 
+  #         cd $CM_BUILD_DIR/ios
+  #         LATEST_BUILD_NUMBER=$(app-store-connect get-latest-app-store-build-number "$APP_ID")
+  #         agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
+  #     - name: Build ipa for distribution
+  #       script: | 
+  #         xcode-project build-ipa \
+  #           --workspace "$CM_BUILD_DIR/ios/$XCODE_WORKSPACE" \
+  #           --scheme "$XCODE_SCHEME"
+  #   artifacts:
+  #     - build/ios/ipa/*.ipa
+  #     - /tmp/xcodebuild_logs/*.log
+  #     - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
+  #     - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
+  #   publishing:
+  #     email:
+  #       recipients:
+  #         - mkarzoun@karzoun.com
+  #       notify:
+  #         success: true
+  #         failure: false
+  #     app_store_connect:
+  #       auth: integration
+  #       submit_to_app_store: false
