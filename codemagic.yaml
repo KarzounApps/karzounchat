@@ -85,6 +85,7 @@ workflows:
         script: | 
           yarn global add expo-cli
           yarn add expo
+          expo eject
       - name: Set Info.plist values
         script: | 
           PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
@@ -94,7 +95,6 @@ workflows:
         script: | 
           cd ios
           rm -rf Pods
-          rm Podfile
           pod install --repo-update
       - name: Set up provisioning profiles settings on Xcode project
         script: xcode-project use-profiles
