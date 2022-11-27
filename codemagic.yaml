@@ -33,6 +33,7 @@ workflows:
           yarn add expo
       - name: eject
         script: |
+         npx expo prebuild
          npx expo run:android
       - name: Set up app/build.gradle
         script: | 
