@@ -8,6 +8,6 @@
   "ios": {
     "bundleIdentifier": "com.karzoun.karzounchat",
     "supportsTablet": true,
-    "buildNumber": "41",
-  },
+    "buildNumber": "41"
+  }
 } 
