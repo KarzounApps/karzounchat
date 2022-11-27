@@ -9,6 +9,15 @@ workflows:
       node: 14.17.3 
       vars:
         PACKAGE_NAME: "com.karzoun.karzounchat"
+    triggering:
+      events:
+          - push
+          - tag
+          - pull_request
+      branch_patterns:
+          - pattern: develop
+            include: true
+            source: true        
     scripts:
       - name: install yarn
         script: yarn add yarn
