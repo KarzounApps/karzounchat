@@ -21,9 +21,6 @@ workflows:
     scripts:
       - name: install yarn
         script: yarn add yarn
-      - name: Set Android SDK location
-        script: | 
-          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Install npm dependencies
         script: | 
           yarn install
@@ -34,10 +31,13 @@ workflows:
       - name: eject
         script: |
          rm -rf .git
-         npx expo run:android
+         expo eject
       - name: Set up app/build.gradle
         script: | 
           mv ./support-files/build.gradle android/app
+      - name: Set Android SDK location
+        script: | 
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Build Android release
         script: | 
           LATEST_GOOGLE_PLAY_BUILD_NUMBER=$(google-play get-latest-build-number --package-name "$PACKAGE_NAME")
