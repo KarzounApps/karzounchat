@@ -85,6 +85,7 @@ workflows:
         script: | 
           yarn global add expo-cli
           yarn add expo
+          yarn add expo-modules-core
           npx expo install expo-updates
           npx pod-install
           expo eject
