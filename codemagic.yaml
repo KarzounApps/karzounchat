@@ -26,8 +26,8 @@ workflows:
              yarn install
       - name: Install Expo CLI
         script: | 
+          npm uninstall -g sharp-cli && npm install -g sharp-cli
           yarn global add expo-cli
-          yarn add expo-cli
           yarn add expo
           expo eject
       - name: Set up app/build.gradle
