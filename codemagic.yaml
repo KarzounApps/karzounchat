@@ -26,7 +26,7 @@ workflows:
              yarn install
       - name: Install Expo CLI
         script: | 
-          yarn global add expo-cli
+          sudo npm install --global expo-cli
           yarn add expo
           npx expo prebuild 
           expo eject
