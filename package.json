@@ -27,6 +27,9 @@
     "@ui-kitten/eva-icons": "^5.1.2",
     "@ui-kitten/metro-config": "^5.1.2",
     "axios": "0.27.2",
+    "expo": "^47.0.8",
+    "expo-splash-screen": "~0.17.5",
+    "expo-status-bar": "~1.4.2",
     "i18n-js": "^4.1.1",
     "lodash.filter": "^4.6.0",
     "lodash.groupby": "^4.6.0",
@@ -70,10 +73,7 @@
     "redux-logger": "^3.0.6",
     "redux-persist": "^6.0.0",
     "redux-thunk": "^2.4.2",
-    "validator": "^13.7.0",
-    "expo": "~47.0.8",
-    "expo-splash-screen": "~0.17.5",
-    "expo-status-bar": "~1.4.2"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
