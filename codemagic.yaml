@@ -28,15 +28,6 @@ workflows:
         script: | 
           yarn global add expo-cli
           yarn add expo
-      - name: eject
-        script: |
-         rm -rf android
-         rm -rf node_modules
-         rm yarn.lock
-         rm package-lock.json
-         npm uninstall -g sharp-cli
-         yarn install
-         expo eject
       - name: Set up app/build.gradle
         script: | 
           mv ./support-files/build.gradle android/app
