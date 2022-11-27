@@ -30,7 +30,12 @@ workflows:
           yarn add expo
       - name: eject
         script: |
-         rm -rf .git
+         rm -rf android
+         rm -rf node_modules
+         rm yarn.lock
+         rm package-lock.json
+         npm uninstall -g sharp-cli
+         yarn install
          expo eject
       - name: Set up app/build.gradle
         script: | 
