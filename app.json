@@ -1,6 +1,10 @@
 {
   "name": "KarzounChat",
   "displayName": "Karzoun Chat",
+  "expo": {
+    "name": "KarzounChat",
+    "slug": "KarzounChat"
+  },
   "android": {
     "package": "com.karzoun.karzounchat",
     "versionCode": 41

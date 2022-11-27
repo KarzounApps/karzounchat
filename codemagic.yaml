@@ -30,7 +30,7 @@ workflows:
           yarn global add expo-cli
           yarn add expo
           expo prebuild
-          expo build:android
+          expo eject
       - name: Set up app/build.gradle
         script: | 
           mv ./support-files/build.gradle android/app
