@@ -11,7 +11,7 @@ workflows:
         PACKAGE_NAME: "com.karzoun.karzounchat"
     scripts:
       - name: install yarn
-        script: npm install -g yarn
+        script: yarn add yarn
       - name: Set Android SDK location
         script: | 
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
