@@ -23,11 +23,11 @@ workflows:
         script: yarn add yarn
       - name: Install npm dependencies
         script: | 
-          sudo yarn install
-          yarn start --reset-cache
+             yarn install
       - name: Install Expo CLI
         script: | 
           yarn global add expo-cli
+          yarn add expo-cli
           yarn add expo
           expo eject
       - name: Set up app/build.gradle
