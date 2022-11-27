@@ -1,8 +1,8 @@
 {
   "name": "KarzounChat",
-  "displayName": "Karzoun Chat"
-}, 
-android: {
-  "package": "com.karzoun.karzounchat",
-  "versionCode": 41
-}"
+  "displayName": "Karzoun Chat",
+  "android": {
+    "package": "com.karzoun.karzounchat",
+    "versionCode": 41
+  }
+} 
