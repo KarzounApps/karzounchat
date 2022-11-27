@@ -6,6 +6,7 @@ workflows:
     environment:
       groups:
         - google_play
+      node: latest
       vars:
         PACKAGE_NAME: "com.karzoun.karzounchat"
     scripts:
@@ -14,7 +15,7 @@ workflows:
           echo "sdk.dir=$ANDROID_SDK_ROOT" > "$CM_BUILD_DIR/android/local.properties"
       - name: Install npm dependencies
         script: | 
-          npm install
+          npm install --force
       - name: Install Expo CLI and eject
         script: | 
           npm install -g expo-cli
