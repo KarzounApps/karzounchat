@@ -85,6 +85,8 @@ workflows:
         script: | 
           yarn global add expo-cli
           yarn add expo
+          npx expo install expo-updates
+          npx pod-install
           expo eject
       - name: Set Info.plist values
         script: | 
