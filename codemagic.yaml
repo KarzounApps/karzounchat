@@ -69,17 +69,22 @@ workflows:
     environment:
       groups:
         - app_store_credentials
+      node: 14.17.3 
       vars:
         BUNDLE_ID: "com.karzoun.karzounchat"
         XCODE_WORKSPACE: "ios/App/App.xcworkspace" # <-- Put the name of your Xcode workspace here
         XCODE_SCHEME: "App" # <-- Put the name of your Xcode scheme here
         APP_ID: 1635427364
     scripts:
-      - name: Install Expo CLI and eject
+      - name: install yarn
+        script: yarn add yarn
+      - name: Install npm dependencies
         script: | 
           yarn install
+      - name: Install Expo CLI
+        script: | 
           yarn global add expo-cli
-          expo eject
+          yarn add expo
       - name: Set Info.plist values
         script: | 
           PLIST=$CM_BUILD_DIR/$XCODE_SCHEME/Info.plist
