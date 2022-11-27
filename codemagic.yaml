@@ -34,6 +34,7 @@ workflows:
       - name: eject
         script: |
          npx expo prebuild
+         rm -rf .git
          npx expo run:android
       - name: Set up app/build.gradle
         script: | 
