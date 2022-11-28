@@ -2,7 +2,7 @@ workflows:
   android:
     name: build, test & publish Android version
     max_build_duration: 120
-    instance_type: mac_mini_m1
+    instance_type: linux
     environment:
       groups:
         - google_play
