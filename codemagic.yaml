@@ -86,10 +86,6 @@ workflows:
       - name: Install Expo CLI
         script: | 
           yarn global add expo-cli
-          yarn add expo
-          yarn add expo-modules-core
-          npx expo install expo-updates
-          npx pod-install
           expo eject
       - name: Set Info.plist values
         script: | 
@@ -99,8 +95,7 @@ workflows:
       - name: Install CocoaPods dependencies
         script: | 
           cd ios
-          rm -rf Pods
-          pod install --repo-update
+          pod install
       - name: Set up provisioning profiles settings on Xcode project
         script: xcode-project use-profiles
       - name: Increment build number
