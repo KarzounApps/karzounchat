@@ -86,6 +86,7 @@ workflows:
       - name: Install Expo CLI
         script: | 
           yarn global add expo-cli
+          npx @react-native-community/cli
           expo eject
       - name: Set Info.plist values
         script: | 
