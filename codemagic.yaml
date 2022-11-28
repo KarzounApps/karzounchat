@@ -27,6 +27,7 @@ workflows:
       - name: Install Expo CLI
         script: | 
           sudo npm install --global expo-cli
+          npx install-expo-modules@latest
           yarn add expo
           npx expo prebuild 
           expo eject
