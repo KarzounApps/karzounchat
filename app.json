@@ -8,6 +8,11 @@
     "android": {
       "package": "com.karzoun.karzounchat",
       "versionCode": 41
+    },
+    "ios": {
+      "bundleIdentifier": "com.karzoun.karzounchat",
+      "supportsTablet": true,
+      "buildNumber": "41"
     }
   },
   "android": {
