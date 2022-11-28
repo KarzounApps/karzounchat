@@ -96,6 +96,7 @@ workflows:
         script: | 
           yarn add expo-modules-core
           cd ios
+          pod clean
           rm -rf Pods &&  pod install --repo-update
       - name: Set up provisioning profiles settings on Xcode project
         script: xcode-project use-profiles
