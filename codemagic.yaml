@@ -94,6 +94,7 @@ workflows:
           $PLIST_BUDDY -c "Add :ITSAppUsesNonExemptEncryption bool false" $PLIST
       - name: Install CocoaPods dependencies
         script: | 
+          yarn add expo-modules-core
           cd ios
           rm -rf Pods &&  pod install --repo-update
       - name: Set up provisioning profiles settings on Xcode project
