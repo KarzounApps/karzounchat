@@ -12,7 +12,12 @@
     "ios": {
       "bundleIdentifier": "com.karzoun.karzounchat",
       "supportsTablet": true,
-      "buildNumber": "41"
+      "buildNumber": "41",
+      "infoPlist": {
+        "NSCameraUsageDescription": "Enable Camera Acess so that you can record  Videos",
+        "NSMicrophoneUsageDescription": "Enable Microphone Access so that you can start recording audio ",
+        "NSPhotoLibraryUsageDescription": "Enable Camera Roll Access so that you can select Other Videos from Camera Roll"
+            }
     }
   },
   "android": {
